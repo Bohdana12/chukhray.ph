@@ -1,513 +1,613 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f8f6f3">
-  <title>Богдана — фотограф</title>
-  <meta name="description" content="Фотограф Богдана. Сімейні, дитячі, жіночі фотосесії, вагітність і хрещення.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
-  <style>
-    :root{--wine:#8e080d;--ink:#282322;--paper:#f8f6f3;--muted:#77716d}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:#fff;color:var(--ink);font-family:Manrope,Arial,sans-serif;font-weight:300}
-    a{color:inherit;text-decoration:none}
-    .hero{min-height:100svh;position:relative;display:flex;flex-direction:column;overflow:hidden;background:#302c26}
-    .masthead{position:relative;z-index:2;text-align:center;background:var(--paper);padding:24px 18px 25px}
-    .signature{font-family:Parisienne,cursive;font-size:clamp(3rem,10vw,5.4rem);line-height:1.05;color:#211719}
-    .role{font-family:"Cormorant Garamond",serif;color:var(--wine);font-size:clamp(1.25rem,4vw,2rem);letter-spacing:.12em;margin-top:8px}
-    .hero-photo{position:absolute;inset:170px 0 0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.45)),url('images/hero.jpg') center 38%/cover no-repeat}
-    .hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.32))}
-    .hero-copy{position:relative;z-index:1;margin:auto 22px 34px;text-align:center;color:#fff;padding-top:260px}
-    .hero-copy p{font-family:"Cormorant Garamond",serif;font-size:clamp(1.5rem,5vw,2.1rem);margin:0 0 25px}
-    .actions{display:grid;gap:12px;max-width:440px;margin:0 auto}
-    .btn{display:block;padding:17px 22px;border-radius:22px;font-size:.98rem;letter-spacing:.03em;transition:transform .2s}
-    .btn:hover{transform:translateY(-2px)}
-    .primary{background:var(--wine);color:white}
-    .secondary{background:#fff;color:var(--wine)}
-    section{padding:82px 22px}
-    .section-title{text-align:center;font-family:"Cormorant Garamond",serif;font-weight:400;color:var(--wine);font-size:clamp(2.7rem,8vw,4.4rem);margin:0 0 42px}
-    .about{background:#fff}
-    .note{max-width:760px;margin:auto;background:#f2f0ed;padding:36px 28px 32px 34px;border-left:5px dotted #c8c4c0;box-shadow:0 16px 38px #0000000c;font-size:clamp(1.05rem,3.8vw,1.35rem);line-height:1.85}
-    .signoff{font-family:Parisienne,cursive;color:var(--wine);font-size:2.5rem;line-height:1.2;margin-top:20px}
-    .polaroids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:720px;margin:55px auto 0;align-items:start}
-    .polaroid{padding:10px 10px 34px;background:white;box-shadow:0 8px 28px #00000015;transform:rotate(-4deg)}
-    .polaroid:nth-child(2){transform:rotate(4deg);margin-top:22px}
-    .polaroid img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#e8e3de}
-    .services{background:var(--paper)}
-    .service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:900px;margin:auto}
-    .service{padding:25px 18px;border:1px solid #e5ded8;background:#fff;text-align:center}
-    .service h3{font-family:"Cormorant Garamond",serif;color:var(--wine);font-size:1.55rem;font-weight:500;margin:0 0 9px}
-    .service p{font-size:.92rem;line-height:1.6;color:var(--muted);margin:0}
-    .portfolio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:900px;margin:auto}
-    .portfolio-grid img{width:100%;height:240px;object-fit:cover;background:#eee}
-    .booking{text-align:center;background:#302a28;color:white}
-    .booking .section-title{color:#fff;margin-bottom:18px}
-    .booking p{max-width:550px;margin:0 auto 28px;line-height:1.8;color:#e9e0dc}
-    footer{text-align:center;padding:26px 16px;color:var(--muted);font-size:.85rem}
-    footer a{color:var(--wine)}
-    .hint{font-size:.82rem;color:var(--muted);text-align:center;margin:22px auto 0;max-width:650px;line-height:1.6}
-    @media(min-width:700px){.hero-photo{inset:190px 0 0;background-position:center 35%}.hero-copy{margin-bottom:55px}.actions{grid-template-columns:1fr 1fr;max-width:600px}.service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.portfolio-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.portfolio-grid img{height:330px}.note{padding:50px 60px}.polaroids{gap:40px}}
-  </style>
-</head>
-<body>
-  <header class="hero" id="home">
-    <div class="masthead">
-      <div class="signature">Богдана</div>
-      <div class="role">PHOTOGRAPHER</div>
-    </div>
-    <div class="hero-photo" role="img" aria-label="Портретна фотографія"></div>
-    <div class="hero-copy">
-      <p>Зупиню мить ♡</p>
-      <div class="actions">
-        <a class="btn primary" href="#booking">Записатися на зйомку</a>
-        <a class="btn secondary" href="#services">Перейти до послуг</a>
-      </div>
-    </div>
-  </header>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bohdana Chukhray — Photographer</title>
 
-  <main>
-    <section class="about" id="about">
-      <h2 class="section-title">Про мене</h2>
-      <div class="note">
-        Привіт! Я вірю, що найкращі кадри — ті, у яких ви справжні.
-        <br><br>
-        Люблю живі емоції, природність і моменти, які не потрібно вигадувати.
-        <br><br>
-        Моя мета — створювати фотографії, у яких ви впізнаєте себе й відчуваєте щось особливе.
-        <div class="signoff">З любов’ю,<br>Богдана</div>
-      </div>
-      <div class="polaroids">
-        <div class="polaroid"><img src="images/about-1.jpg" alt="Фотографія з портфоліо"></div>
-        <div class="polaroid"><img src="images/about-2.jpg" alt="Фотографія з портфоліо"></div>
-    </section>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #f8f3ee;
+  --white: #fffdfa;
+  --pink: #ead7d2;
+  --wine: #702b40;
+  --text: #332724;
+  --muted: #82716b;
+  --line: #e7dcd5;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 300;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font: 500 25px 'Cormorant Garamond', serif;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+nav a:hover { color: var(--wine); }
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--wine);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 7%;
+  align-items: center;
+  padding: 75px 0 90px;
+}
+
+h1 {
+  font: 400 clamp(48px, 7vw, 88px)/.95 'Cormorant Garamond', serif;
+  margin: 24px 0;
+}
+
+.signature {
+  display: block;
+  color: var(--wine);
+  font: 400 clamp(45px, 6vw, 72px) 'Parisienne', cursive;
+  margin-top: 10px;
+}
+
+.hero p {
+  max-width: 360px;
+  font-size: 13px;
+  line-height: 2;
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 24px;
+  background: var(--wine);
+  color: white;
+  border: 1px solid var(--wine);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: .25s;
+}
+
+.button:hover {
+  background: transparent;
+  color: var(--wine);
+}
+
+.hero-image {
+  position: relative;
+  padding: 20px 0 25px 25px;
+}
+
+.hero-image::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 65%;
+  height: 75%;
+  background: var(--pink);
+}
+
+.hero-image img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+}
+
+.image-note {
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  padding: 17px 20px;
+  background: var(--white);
+  color: var(--wine);
+  font: 24px 'Cormorant Garamond', serif;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+  <a class="logo" href="#home">Bohdana Chukhray</a>
+  <nav>
+    <a href="#services">Послуги</a>
+    <a href="#about">Про мене</a>
+    <a href="#contact">Контакт</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <div class="eyebrow">Photographer · Ukraine</div>
+    <h1>
+      BOHDANA
+      <span class="signature">Chukhray</span>
+    </h1>
+
+    <p>
+      Ваші миті. Справжні.<br>
+      Зберігаю історії у фотографіях —
+      ніжно, щиро й без зайвого позування.
+    </p>
+
+    <a class="button" href="#services">Обрати зйомку</a>
+  </div>
+
+  <div class="hero-image">
+    <img
+      src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85"
+      alt="Атмосферна фотографія"
+    >
+    <div class="image-note">ваші справжні моменти</div>
+  </div>
+</section>
+</div>
+  
+<style>
+.services {
+  padding: 75px 0;
+  background: var(--white);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.section-title h2 {
+  font: 400 clamp(40px, 5vw, 60px)
+    'Cormorant Garamond', serif;
+  margin: 14px 0;
+}
+
+.section-title p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.service {
+  padding: 25px;
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+.service-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.service h3 {
+  margin: 0 0 10px;
+  font: 500 29px 'Cormorant Garamond', serif;
+}
+
+.price {
+  padding-top: 7px;
+  white-space: nowrap;
+  color: var(--wine);
+  font-size: 12px;
+}
+
+.service-description {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 5px 0 17px;
+}
+
+.details-button {
+  padding: 0 0 5px;
+  border: 0;
+  border-bottom: 1px solid var(--wine);
+  background: none;
+  color: var(--wine);
+  cursor: pointer;
+  font: 500 10px 'Manrope', sans-serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.details {
+  display: none;
+  padding-top: 15px;
+  margin-top: 17px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.details.open {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service {
+    padding: 22px;
+  }
+
+  .service-heading {
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 45px 0 60px;
+  }
+
+  .hero-image img {
+    height: 380px;
+  }
+
+  header {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav {
+    gap: 12px;
+  }
+}
+</style>
 
 <section class="services" id="services">
-  <h2 class="section-title">Мої послуги</h2>
+  <div class="container">
 
-  <div class="service-grid">
+    <div class="section-title">
+      <div class="eyebrow">Що збережемо разом</div>
+      <h2>Послуги та вартість</h2>
+      <p>Обери свою історію, щоб дізнатися більше.</p>
+    </div>
 
-    <article class="service">
-      <h3>Індивідуальна зйомка</h3>
-      <p>Це про тебе, твій настрій і красу справжніх моментів, у яких ти будеш собою.</p>
+    <div class="service-grid">
 
-      <details class="shoot-details">
-  <summary>
-    <span class="details-closed">Деталі <span>＋</span></span>
-    <span class="details-open">Згорнути <span>−</span></span>
-  </summary>
-
-  <div class="shoot-details-text">
-    <p>Тривалість — 1 година</p>
-    <p>До 2 образів</p>
-    <p>Допомога з вибором локації, образу та позуванням</p>
-    <p>70-100 фото в моїй обробці та легкій ретуші</p>
-    <p>Термін видачі — до 10 днів</p>
-  </div>
-</details>
-
-        <!doctype html>
-<html lang="uk">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f8f6f3">
-  <title>Богдана — фотограф</title>
-  <meta name="description" content="Фотограф Богдана. Сімейні, дитячі, жіночі фотосесії, вагітність і хрещення.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
-  <style>
-    :root{--wine:#8e080d;--ink:#282322;--paper:#f8f6f3;--muted:#77716d}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:#fff;color:var(--ink);font-family:Manrope,Arial,sans-serif;font-weight:300}
-    a{color:inherit;text-decoration:none}
-    .hero{min-height:100svh;position:relative;display:flex;flex-direction:column;overflow:hidden;background:#302c26}
-    .masthead{position:relative;z-index:2;text-align:center;background:var(--paper);padding:24px 18px 25px}
-    .signature{font-family:Parisienne,cursive;font-size:clamp(3rem,10vw,5.4rem);line-height:1.05;color:#211719}
-    .role{font-family:"Cormorant Garamond",serif;color:var(--wine);font-size:clamp(1.25rem,4vw,2rem);letter-spacing:.12em;margin-top:8px}
-    .hero-photo{position:absolute;inset:170px 0 0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.45)),url('images/hero.jpg') center 38%/cover no-repeat}
-    .hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.32))}
-    .hero-copy{position:relative;z-index:1;margin:auto 22px 34px;text-align:center;color:#fff;padding-top:260px}
-    .hero-copy p{font-family:"Cormorant Garamond",serif;font-size:clamp(1.5rem,5vw,2.1rem);margin:0 0 25px}
-    .actions{display:grid;gap:12px;max-width:440px;margin:0 auto}
-    .btn{display:block;padding:17px 22px;border-radius:22px;font-size:.98rem;letter-spacing:.03em;transition:transform .2s}
-    .btn:hover{transform:translateY(-2px)}
-    .primary{background:var(--wine);color:white}
-    .secondary{background:#fff;color:var(--wine)}
-    section{padding:82px 22px}
-    .section-title{text-align:center;font-family:"Cormorant Garamond",serif;font-weight:400;color:var(--wine);font-size:clamp(2.7rem,8vw,4.4rem);margin:0 0 42px}
-    .about{background:#fff}
-    .note{max-width:760px;margin:auto;background:#f2f0ed;padding:36px 28px 32px 34px;border-left:5px dotted #c8c4c0;box-shadow:0 16px 38px #0000000c;font-size:clamp(1.05rem,3.8vw,1.35rem);line-height:1.85}
-    .signoff{font-family:Parisienne,cursive;color:var(--wine);font-size:2.5rem;line-height:1.2;margin-top:20px}
-    .polaroids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:720px;margin:55px auto 0;align-items:start}
-    .polaroid{padding:10px 10px 34px;background:white;box-shadow:0 8px 28px #00000015;transform:rotate(-4deg)}
-    .polaroid:nth-child(2){transform:rotate(4deg);margin-top:22px}
-    .polaroid img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#e8e3de}
-    .services{background:var(--paper)}
-    .service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:900px;margin:auto}
-    .service{padding:25px 18px;border:1px solid #e5ded8;background:#fff;text-align:center}
-    .service h3{font-family:"Cormorant Garamond",serif;color:var(--wine);font-size:1.55rem;font-weight:500;margin:0 0 9px}
-    .service p{font-size:.92rem;line-height:1.6;color:var(--muted);margin:0}
-    .portfolio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:900px;margin:auto}
-    .portfolio-grid img{width:100%;height:240px;object-fit:cover;background:#eee}
-    .booking{text-align:center;background:#302a28;color:white}
-    .booking .section-title{color:#fff;margin-bottom:18px}
-    .booking p{max-width:550px;margin:0 auto 28px;line-height:1.8;color:#e9e0dc}
-    footer{text-align:center;padding:26px 16px;color:var(--muted);font-size:.85rem}
-    footer a{color:var(--wine)}
-    .hint{font-size:.82rem;color:var(--muted);text-align:center;margin:22px auto 0;max-width:650px;line-height:1.6}
-    @media(min-width:700px){.hero-photo{inset:190px 0 0;background-position:center 35%}.hero-copy{margin-bottom:55px}.actions{grid-template-columns:1fr 1fr;max-width:600px}.service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.portfolio-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.portfolio-grid img{height:330px}.note{padding:50px 60px}.polaroids{gap:40px}}
-
-    <article class="service">
-      <h3>Love story</h3>
-      <p>Історія про вас двох, ваші почуття, ніжні обійми та погляди, у яких цілий всесвіт.</p>
-
-      <details class="shoot-details">
-        <summary>
-          <span class="details-closed">Деталі <span>＋</span></span>
-          <span class="details-open">Згорнути <span>−</span></span>
-        </summary>
-        <div class="shoot-details-text">
-          <p>Тривалість — 1 година</p>
-          <p>До 2 образів</p>
-          <p>Допомога з вибором локації та позуванням</p>
-          <p>70–100 фото в моїй обробці та легкій ретуші</p>
-          <p>Термін видачі — до 10 днів</p>
+      <article class="service">
+        <div class="service-heading">
+          <h3>Індивідуальна зйомка</h3>
+          <div class="price">1 500 грн</div>
         </div>
-      </details>
-    </article>
+        <p class="service-description">
+          Час для себе, свого настрою та красивих кадрів.
+          Допоможу розслабитися й бути собою.
+        </p>
+        <button class="details-button" aria-expanded="false"
+          onclick="toggleDetails(this)">Деталі +</button>
+        <div class="details">
+          У зйомку входить:
+          <ul>
+            <li>1 година зйомки</li>
+            <li>До 2 образів</li>
+            <li>Допомога з вибором локації та образів</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-heading">
+          <h3>Love story</h3>
+          <div class="price">1 500 грн</div>
+        </div>
+        <p class="service-description">
+          Ваша історія кохання — у поглядах, дотиках
+          і маленьких моментах, які належать тільки вам.
+        </p>
+        <button class="details-button" aria-expanded="false"
+          onclick="toggleDetails(this)">Деталі +</button>
+        <div class="details">
+          Прогулянка, обійми, сміх і щирі емоції.
+          Допоможу з ідеєю та підкажу, як почуватися
+          природно перед камерою.
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-heading">
+          <h3>Сімейна зйомка</h3>
+          <div class="price">1 500 грн</div>
+        </div>
+        <p class="service-description">
+          Про обійми, сміх, дитячі долоньки й вас справжніх.
+          Без ідеальності — зате з любов’ю.
+        </p>
+        <button class="details-button" aria-expanded="false"
+          onclick="toggleDetails(this)">Деталі +</button>
+        <div class="details">
+          Зйомка для вашої сім’ї у комфортному темпі:
+          живе спілкування, ніжність і кадри,
+          до яких захочеться повертатися.
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-heading">
+          <h3>Вагітність</h3>
+          <div class="price">1 500 грн</div>
+        </div>
+        <p class="service-description">
+          Ніжна історія очікування, щоб зберегти пам’ять
+          про цей особливий період.
+        </p>
+        <button class="details-button" aria-expanded="false"
+          onclick="toggleDetails(this)">Деталі +</button>
+        <div class="details">
+          Допоможу підібрати образи й локацію,
+          щоб створити делікатні, теплі фотографії
+          про очікування вашого малюка.
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-heading">
+          <h3>Хрещення</h3>
+          <div class="price">від 2 000 грн</div>
+        </div>
+        <p class="service-description">
+          Делікатний репортаж важливого дня —
+          від зворушливих деталей до теплих обіймів рідних.
+        </p>
+        <button class="details-button" aria-expanded="false"
+          onclick="toggleDetails(this)">Деталі +</button>
+        <div class="details">
+          Фіксую головні моменти та емоції вашої родини,
+          не втручаючись у перебіг таїнства.
+          Вартість залежить від тривалості зйомки.
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-heading">
+          <h3>Репортаж</h3>
+          <div class="price">від 1 500 грн</div>
+        </div>
+        <p class="service-description">
+          Щирі емоції, важливі деталі та моменти,
+          які швидко минають.
+        </p>
+        <button class="details-button" aria-expanded="false"
+          onclick="toggleDetails(this)">Деталі +</button>
+        <div class="details">
+          Зберігаю подію такою, якою вона є:
+          без постановки, з увагою до людей,
+          атмосфери та маленьких історій дня.
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-heading">
+          <h3>Весільна історія</h3>
+          <div class="price">від 2 000 грн</div>
+        </div>
+        <p class="service-description">
+          Вінчання, розпис або весілля —
+          збережу атмосферу вашого особливого дня.
+        </p>
+        <button class="details-button" aria-expanded="false"
+          onclick="toggleDetails(this)">Деталі +</button>
+        <div class="details">
+          Від хвилюючих митей до щирих обіймів
+          і святкування. Формат та вартість узгоджуємо
+          залежно від плану й тривалості дня.
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-heading">
+          <h3>Шкільна зйомка</h3>
+          <div class="price">від 250 грн/учень</div>
+        </div>
+        <p class="service-description">
+          Живі портрети, дружба та теплі спогади
+          про час, який так швидко минає.
+        </p>
+        <button class="details-button" aria-expanded="false"
+          onclick="toggleDetails(this)">Деталі +</button>
+        <div class="details">
+          Портрети учнів, фото друзів і класу,
+          шкільні будні та особливі події.
+          Вартість залежить від кількості учнів
+          і формату зйомки.
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleDetails(button) {
+  const details = button.nextElementSibling;
+  const isOpen = details.classList.toggle('open');
+
+  button.textContent = isOpen ? 'Згорнути −' : 'Деталі +';
+  button.setAttribute('aria-expanded', isOpen);
+}
+</script>
+  
 <style>
-.shoot-details {
-  margin-top: 20px;
-  padding-top: 14px;
-  border-top: 1px solid #e5d9d0;
-}
-
-.shoot-details summary {
-  list-style: none;
-  display: flex;
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8%;
   align-items: center;
+  padding: 80px 0;
+}
+
+.about img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+}
+
+.about h2,
+.contact h2 {
+  font: 400 clamp(40px, 5vw, 60px)
+    'Cormorant Garamond', serif;
+  margin: 15px 0;
+}
+
+.about p,
+.contact p {
+  font-size: 13px;
+  line-height: 2;
+  color: var(--muted);
+}
+
+.script {
+  color: var(--wine);
+  font: 32px 'Parisienne', cursive;
+  margin-top: 22px;
+}
+
+.contact {
+  padding: 75px 0;
+  text-align: center;
+  background: var(--pink);
+}
+
+.contact p {
+  max-width: 470px;
+  margin: 0 auto 28px;
+}
+
+footer {
+  display: flex;
   justify-content: space-between;
-  padding: 14px 17px;
-  background: #f8f4ef;
-  border: 1px solid #e5d9d0;
-  border-radius: 8px;
-  color: #8e080d;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  transition: background 0.25s ease;
+  gap: 15px;
+  padding: 25px 0;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--muted);
 }
 
-.shoot-details summary::-webkit-details-marker {
-  display: none;
-}
+@media (max-width: 700px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 55px 0;
+  }
 
-.shoot-details summary span span {
-  margin-left: 10px;
-  font-size: 18px;
-}
+  .about img { height: 350px; }
 
-.shoot-details summary:hover {
-  background: #f0e7df;
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
 }
-
-.shoot-details .details-open {
-  display: none;
-}
-
-.shoot-details[open] .details-closed {
-  display: none;
-}
-
-.shoot-details[open] .details-open {
-  display: inline;
-}
-
-.shoot-details-text {
-  padding: 16px 5px 5px;
-  color: #51483f;
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.shoot-details-text p {
-  margin: 0 0 9px;
-}
-          
 </style>
 
-  </div>
-</section>
+<div class="container">
+  <section class="about" id="about">
+    <img
+      src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=1000&q=85"
+      alt="Фотоапарат фотографа"
+    >
 
-        <details class="shoot-details">
-        <summary>
-          <span class="details-closed">Деталі <span>＋</span></span>
-          <span class="details-open">Згорнути <span>−</span></span>
-        </summary>
-        <div class="shoot-details-text">
-          <p>Тривалість — 1 година</p>
-          <p>До 2 образів</p>
-          <p>Допомога з вибором локації та позуванням</p>
-          <p>70–100 фото в моїй обробці та легкій ретуші</p>
-          <p>Термін видачі — до 10 днів</p>
-        </div>
-      </details>
-    </article>
-        
-</head>
-<body>
-  <header class="hero" id="home">
-    <div class="masthead">
-      <div class="signature">Богдана</div>
-      <div class="role">PHOTOGRAPHER</div>
+    <div>
+      <div class="eyebrow">Трохи про мене</div>
+
+      <h2>Мені важливо,<br>щоб ви були собою</h2>
+
+      <p>
+        Я Богдана — фотограф і мама.
+        Люблю справжні емоції, ніжне світло
+        й моменти, які не потрібно вигадувати.
+        На зйомці допоможу з підказками та створю
+        комфортну атмосферу, щоб у кадрі залишилися саме ви.
+      </p>
+
+      <div class="script">До зустрічі у кадрі ♡</div>
     </div>
-    <div class="hero-photo" role="img" aria-label="Портретна фотографія"></div>
-    <div class="hero-copy">
-      <p>Зупиню мить ♡</p>
-      <div class="actions">
-        <a class="btn primary" href="#booking">Записатися на зйомку</a>
-        <a class="btn secondary" href="#services">Перейти до послуг</a>
-      </div>
-    </div>
-  </header>
+  </section>
+</div>
 
-  <main>
-    <section class="about" id="about">
-      <h2 class="section-title">Про мене</h2>
-      <div class="note">
-        Привіт! Я вірю, що найкращі кадри — ті, у яких ви справжні.
-        <br><br>
-        Люблю живі емоції, природність і моменти, які не потрібно вигадувати.
-        <br><br>
-        Моя мета — створювати фотографії, у яких ви впізнаєте себе й відчуваєте щось особливе.
-        <div class="signoff">З любов’ю,<br>Богдана</div>
-      </div>
-      <div class="polaroids">
-        <div class="polaroid"><img src="images/about-1.jpg" alt="Фотографія з портфоліо"></div>
-        <div class="polaroid"><img src="images/about-2.jpg" alt="Фотографія з портфоліо"></div>
-    </section>
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="eyebrow">Збережімо вашу історію</div>
 
-    <section class="services" id="services">
-      <h2 class="section-title">Мої послуги</h2>
-      <div class="service-grid">
-        <article class="service"><h3>Індивідуальна зйомка</h3><p>Це про тебе, твій настрій і красу справжніх моментів, у яких ти будеш собою.</p></article>
-<details class="shoot-details">
-  <summary>
-    <span class="details-closed">Деталі <span>＋</span></span>
-    <span class="details-open">Згорнути <span>−</span></span>
-  </summary>
+    <h2>Заплануємо зйомку?</h2>
 
-  <div class="shoot-details-text">
-    <p>Тривалість — 1 година</p>
-    <p>До 2 образів</p>
-    <p>Допомога з вибором локації, образу та позуванням</p>
-    <p>60–80 фото в моїй обробці та легкій ретуші</p>
-    <p>Термін видачі — до 10 днів</p>
+    <p>
+      Напиши мені, яку історію хочеш зберегти,
+      — разом підберемо ідею, локацію та зручну дату.
+    </p>
+
+    <a
+      class="button"
+      href="https://www.instagram.com/chukhray.ph"
+      target="_blank"
+      rel="noopener"
+    >
+      Написати в Instagram
+    </a>
   </div>
-</details>
-        
-
-        <article class="service"><h3>Love story</h3><p>Історія про вас двох, ваші почуття, ніжні обійми та погляди, у яких цілий всесвіт.</p></article>
-        <details class="shoot-details">
-  <summary>
-    <span class="details-closed">Деталі <span>＋</span></span>
-    <span class="details-open">Згорнути <span>−</span></span>
-  </summary>
-
-  <div class="shoot-details-text">
-    <p>Тривалість — 1 година</p>
-    <p>До 2 образів</p>
-    <p>Допомога з вибором локації, образу та позуванням</p>
-    <p>70-100 фото в моїй обробці та легкій ретуші</p>
-    <p>Термін видачі — до 10 днів</p>
-  </div>
-</details>
-        <article class="service"><h3>Сімейна зйомка</h3><p>Теплі обійми, щирі емоції та спогади про найрідніших.</p></article>
-        <article class="service"><h3>Вагітність</h3><p>Ніжність, очікування та особлива любов, яка вже росте під серцем.</p></article>
-        <article class="service"><h3>Хрещення</h3><p>Світлі спогади про один із найважливіших днів у житті малюка.</p></article>
-        <article class="service"><h3>Репортаж</h3><p>Атмосфера події та миті, які неможливо повторити.</p></article>
-      </div>
-</section>
-</style>
-
-    <section id="portfolio">
-      <h2 class="section-title">Мої кадри</h2>
-      <div class="portfolio-grid">
-        <img src="images/photo-1.jpg" alt="Портфоліо — фото 1">
-        <img src="images/photo-2.jpg" alt="Портфоліо — фото 2">
-        <img src="images/photo-3.jpg" alt="Портфоліо — фото 3">
-        <img src="images/photo-4.jpg" alt="Портфоліо — фото 4">
-        <img src="images/photo-5.jpg" alt="Портфоліо — фото 5">
-        <img src="images/photo-6.jpg" alt="Портфоліо — фото 6">
-      </div>
-    </section>
-
-    <section class="booking" id="booking">
-      <h2 class="section-title">Створімо ваші спогади</h2>
-      <p>Напиши мені, яку зйомку мрієш зберегти — і разом придумаємо щось особливе.</p>
-      <div class="actions">
-        <a class="btn primary" href="https://www.instagram.com/chukhray.ph/" target="_blank" rel="noopener">Написати в Instagram</a>
-        <a class="btn secondary" href="#home">На початок ↑</a>
-  </main>
-</body>
-<section id="terms" class="terms">
-  <h2>Умови співпраці</h2>
-
-  <div class="terms-item">
-    <h3>Бронювання та оплата</h3>
-    <p>Дата зйомки вважається заброньованою після внесення передоплати у розмірі 500 грн. Решта суми оплачується після завершення зйомки.</p>
-  </div>
-
-  <div class="terms-item">
-    <h3>Перенесення та скасування</h3>
-    <p>Перенести зйомку можна не більше двох разів. У разі скасування зйомки передоплата не повертається.</p>
-  </div>
-
-  <div class="terms-item">
-    <h3>Локація та час</h3>
-    <p>Якщо локація розташована за межами міста, додатково оплачуються транспортні витрати або ми вирушаємо на зйомку вашим транспортом.</p>
-    <p>Час зйомки починається з першої локації. Час переїздів між локаціями входить у загальний час роботи фотографа.</p>
-  </div>
-
-  <div class="terms-item">
-    <h3>Публікація фотографій</h3>
-    <p>Я залишаю за собою право використовувати фотографії та відео зі зйомки у своєму портфоліо. Якщо ви повідомите про бажання провести конфіденційну зйомку до її початку, фотографії не публікуватимуться.</p>
-  </div>
-
-  <div class="terms-item">
-    <h3>Обробка фотографій</h3>
-    <p>Виконую легку ретуш: прибираю видимі недоліки шкіри, як-от прищики та синці, а також сторонні предмети на фоні. Фігуру не змінюю та нічого додатково не домальовую.</p>
-  </div>
-
-  <div class="terms-item">
-    <h3>Готові матеріали</h3>
-    <p>Вихідні RAW-файли не надаються.</p>
-  </div>
-
-  <p class="terms-signature">З повагою, ваш фотограф Богдана 🤍</p>
 </section>
 
-  <footer>© <span id="year"></span> Богдана · Фотографія з любов’ю</footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>px;
-  color: #8e080d;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  transition: background 0.25s ease;
-}
-
-.shoot-details summary::-webkit-details-marker {
-  display: none;
-}
-
-.shoot-details summary span span {
-  margin-left: 10px;
-  font-size: 18px;
-}
-
-.shoot-details summary:hover {
-  background: #f0e7df;
-}
-
-.shoot-details .details-open {
-  display: none;
-}
-
-.shoot-details[open] .details-closed {
-  display: none;
-}
-
-.shoot-details[open] .details-open {
-  display: inline;
-}
-
-.shoot-details-text {
-  padding: 16px 5px 5px;
-  color: #51483f;
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.shoot-details-text p {
-  margin: 0 0 9px;
-}
-</style>
-
-
-        
-        <article class="service"><h3>Сімейна зйомка</h3><p>Теплі обійми, щирі емоції та спогади про найрідніших.</p></article>
-        <article class="service"><h3>Вагітність</h3><p>Ніжність, очікування та особлива любов, яка вже росте під серцем.</p></article>
-        <article class="service"><h3>Хрещення</h3><p>Світлі спогади про один із найважливіших днів у житті малюка.</p></article>
-        <article class="service"><h3>Репортаж</h3><p>Атмосфера події та миті, які неможливо повторити.</p></article>
-      </div>
-    </section>
-
-    <section id="portfolio">
-      <h2 class="section-title">Мої кадри</h2>
-      <div class="portfolio-grid">
-        <img src="images/photo-1.jpg" alt="Портфоліо — фото 1">
-        <img src="images/photo-2.jpg" alt="Портфоліо — фото 2">
-        <img src="images/photo-3.jpg" alt="Портфоліо — фото 3">
-        <img src="images/photo-4.jpg" alt="Портфоліо — фото 4">
-        <img src="images/photo-5.jpg" alt="Портфоліо — фото 5">
-        <img src="images/photo-6.jpg" alt="Портфоліо — фото 6">
-      </div>
-    </section>
-
-    <section class="booking" id="booking">
-      <h2 class="section-title">Створімо ваші спогади</h2>
-      <p>Напиши мені, яку зйомку мрієш зберегти — і разом придумаємо щось особливе.</p>
-      <div class="actions">
-        <a class="btn primary" href="https://www.instagram.com/chukhray.ph/" target="_blank" rel="noopener">Написати в Instagram</a>
-        <a class="btn secondary" href="#home">На початок ↑</a>
-  </main>
-</body>
-<section id="terms" class="terms">
-  <h2>Умови співпраці</h2>
-
-  <div class="terms-item">
-    <h3>Бронювання та оплата</h3>
-    <p>Дата зйомки вважається заброньованою після внесення передоплати у розмірі 500 грн. Решта суми оплачується після завершення зйомки.</p>
-  </div>
-
-  <div class="terms-item">
-    <h3>Перенесення та скасування</h3>
-    <p>Перенести зйомку можна не більше двох разів. У разі скасування зйомки передоплата не повертається.</p>
-  </div>
-
-  <div class="terms-item">
-    <h3>Локація та час</h3>
-    <p>Якщо локація розташована за межами міста, додатково оплачуються транспортні витрати або ми вирушаємо на зйомку вашим транспортом.</p>
-    <p>Час зйомки починається з першої локації. Час переїздів між локаціями входить у загальний час роботи фотографа.</p>
-  </div>
-
-  <div class="terms-item">
-    <h3>Публікація фотографій</h3>
-    <p>Я залишаю за собою право використовувати фотографії та відео зі зйомки у своєму портфоліо. Якщо ви повідомите про бажання провести конфіденційну зйомку до її початку, фотографії не публікуватимуться.</p>
-  </div>
-
-  <div class="terms-item">
-    <h3>Обробка фотографій</h3>
-    <p>Виконую легку ретуш: прибираю видимі недоліки шкіри, як-от прищики та синці, а також сторонні предмети на фоні. Фігуру не змінюю та нічого додатково не домальовую.</p>
-  </div>
-
-  <div class="terms-item">
-    <h3>Готові матеріали</h3>
-    <p>Вихідні RAW-файли не надаються.</p>
-  </div>
-
-  <p class="terms-signature">З повагою, ваш фотограф Богдана 🤍</p>
-</section>
-
-  <footer>© <span id="year"></span> Богдана · Фотографія з любов’ю</footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<div class="container">
+  <footer>
+    <span>© Bohdana Chukhray · Photographer</span>
+    <span>Ваші миті. Справжні.</span>
+  </footer>
+</div>
 </body>
 </html>
+
