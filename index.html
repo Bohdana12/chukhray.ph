@@ -1,4 +1,733 @@
 
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chukhray Bohdana — Photographer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #f8f3ee;
+  --white: #fffdfa;
+  --pink: #ead7d2;
+  --wine: #702b40;
+  --text: #332724;
+  --muted: #82716b;
+  --line: #e7dcd5;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 300;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font: 500 25px 'Cormorant Garamond', serif;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+nav a:hover { color: var(--wine); }
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--wine);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 7%;
+  align-items: center;
+  padding: 75px 0 90px;
+}
+
+h1 {
+  font: 400 clamp(48px, 7vw, 88px)/.95 'Cormorant Garamond', serif;
+  margin: 24px 0;
+}
+
+.signature {
+  display: block;
+  color: var(--wine);
+  font: 400 clamp(45px, 6vw, 72px) 'Parisienne', cursive;
+  margin-top: 10px;
+}
+
+.hero p {
+  max-width: 360px;
+  font-size: 13px;
+  line-height: 2;
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 24px;
+  background: var(--wine);
+  color: white;
+  border: 1px solid var(--wine);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: .25s;
+}
+
+.button:hover {
+  background: transparent;
+  color: var(--wine);
+}
+
+.hero-image {
+  position: relative;
+  padding: 20px 0 25px 25px;
+}
+
+.hero-image::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 65%;
+  height: 75%;
+  background: var(--pink);
+}
+
+.hero-image img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+}
+
+.image-note {
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  padding: 17px 20px;
+  background: var(--white);
+  color: var(--wine);
+  font: 24px 'Cormorant Garamond', serif;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+  <a class="logo" href="#home">chukhray.ph</a>
+  <nav>
+    <a href="#services">Послуги</a>
+    <a href="#conditions">Умови зйомки</a>
+    <a href="#about">Про мене</a>
+    <a href="#contact">Контакт</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <div class="eyebrow">Фотограф·Шаргород</div>
+    <h1>
+     <span class="signature">Богдана Чухрай</span>
+    </h1>
+
+    <p>
+      Ваші миті. Справжні.<br>
+      Зберігаю історії у фотографіях —
+      ніжно, щиро й без зайвого позування.
+    </p>
+
+    <a class="button" href="#services">Обрати зйомку</a>
+  </div>
+
+  <div class="hero-image">
+    <img
+      src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85"
+      alt="Атмосферна фотографія"
+    >
+        <div class="image-note">ваші справжні моменти</div>
+  </div>
+</section>
+</div>
+<style>
+.services {
+  padding: 75px 0;
+  background: var(--white);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.section-title h2 {
+  font: 400 clamp(40px, 5vw, 60px)
+    'Cormorant Garamond', serif;
+  margin: 14px 0;
+}
+
+.section-title p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.service {
+  padding: 25px;
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+.service-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.service h3 {
+  margin: 0 0 10px;
+  font: 500 29px 'Cormorant Garamond', serif;
+}
+
+.price {
+  padding-top: 7px;
+  white-space: nowrap;
+  color: var(--wine);
+  font-size: 12px;
+}
+
+.service-description {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 5px 0 17px;
+}
+
+.details-button {
+  padding: 0 0 5px;
+  border: 0;
+  border-bottom: 1px solid var(--wine);
+  background: none;
+  color: var(--wine);
+  cursor: pointer;
+  font: 500 10px 'Manrope', sans-serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.details {
+  display: none;
+  padding-top: 15px;
+  margin-top: 17px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.details.open {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service {
+    padding: 22px;
+  }
+
+  .service-heading {
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 45px 0 60px;
+  }
+
+  .hero-image img {
+    height: 380px;
+  }
+
+  header {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav {
+    gap: 12px;
+  }
+}
+</style>
+
+<section class="services" id="services">
+  <div class="container">
+
+    <div class="section-title">
+      <div class="eyebrow">Що збережемо разом</div>
+      <h2>Послуги та вартість</h2>
+      <p>Обери свою історію, щоб дізнатися більше.</p>
+    </div>
+
+    <div class="service-grid">
+
+      <article class="service">
+        <div class="service-heading">
+          <h3>Індивідуальна зйомка</h3>
+          <div class="price">1 500 грн</div>
+        </div>
+        <p class="service-description">
+          Час для себе, свого настрою та красивих кадрів.
+          Допоможу розслабитися й бути собою.
+        </p>
+        <button class="details-button" aria-expanded="false"
+          onclick="toggleDetails(this)">Деталі +</button>
+        <div class="details">
+          У зйомку входить:
+          <ul>
+            <li>1 година зйомки</li>
+            <li>До 2 образів</li>
+            <li>Допомога з позуванням, з вибором ідеї, образів і локації</li>
+            <li>70-90 фото в авторській обробці та легкій ретуші</li>
+            <li>Термін віддачі фото до 10 днів (в електронному вигляді через онлайн галерею)</li>
+            <li>Фото в стилі полароїд в подарунок (додаткове фото 100 грн)</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-heading">
+          <h3>Love story</h3>
+          <div class="price">1 500 грн</div>
+        </div>
+        <p class="service-description">
+          Ваша історія кохання — у поглядах, дотиках
+          і маленьких моментах, які належать тільки вам.
+        </p>
+   <button class="details-button" aria-expanded="false"
+          onclick="toggleDetails(this)">Деталі +</button>
+        <div class="details">
+          У зйомку входить:
+          <ul>
+            <li>1 година зйомки</li>
+            <li>До 2 образів</li>
+            <li>Допомога з позуванням, з вибором ідеї, образів і локації</li>
+            <li>90-120 фото в авторській обробці та легкій ретуші</li>
+            <li>Термін віддачі фото до 10 днів (в електронному вигляді через онлайн галерею)</li>
+            <li>Фото в стилі полароїд в подарунок (додаткове фото 100 грн)</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-heading">
+          <h3>Сімейна зйомка</h3>
+          <div class="price">1 500 грн</div>
+        </div>
+        <p class="service-description">
+          Про обійми, сміх, дитячі долоньки й вас справжніх.
+          Без ідеальності — зате з любов’ю.
+        </p>
+        <button class="details-button" aria-expanded="false"
+          onclick="toggleDetails(this)">Деталі +</button>
+        <div class="details">
+        У зйомку входить:
+          <ul>
+            <li>1 година зйомки</li>
+            <li>До 2 образів</li>
+            <li>Допомога з позуванням, з вибором ідеї, образів і локації</li>
+            <li>120-150 фото в авторській обробці та легкій ретуші</li>
+            <li>Термін віддачі фото до 10 днів (в електронному вигляді через онлайн галерею)</li>
+            <li>Фото в стилі полароїд в подарунок (додаткове фото 100 грн)</li>
+          </ul>
+        </div>
+      </article>
+      <article class="service">
+        <div class="service-heading">
+          <h3>Вагітність</h3>
+          <div class="price">1 500 грн</div>
+        </div>
+        <p class="service-description">
+          Ніжна історія очікування, щоб зберегти пам’ять
+          про цей особливий період.
+        </p>
+        <button class="details-button" aria-expanded="false"
+          onclick="toggleDetails(this)">Деталі +</button>
+        <div class="details">
+          У зйомку входить:
+          <ul>
+            <li>1 година зйомки</li>
+            <li>До 2 образів</li>
+            <li>Допомога з позуванням, з вибором ідеї, образів і локації</li>
+            <li>70-90 фото в авторській обробці та легкій ретуші</li>
+            <li>Термін віддачі фото до 10 днів (в електронному вигляді через онлайн галерею)</li>
+            <li>Фото в стилі полароїд в подарунок (додаткове фото 100 грн)</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-heading">
+          <h3>Хрещення</h3>
+          <div class="price">2 000 грн</div>
+        </div>
+        <p class="service-description">
+          важливі моменти, емоції та сімейні кадри.
+        </p>
+        <button class="details-button" aria-expanded="false"
+          onclick="toggleDetails(this)">Деталі +</button>
+        <div class="details">
+             У зйомку входить:
+          <ul>
+            <li>1 година зйомки</li>
+            <li>70-90 авторській обробці та легкій ретуші</li>
+            <li>Термін віддачі фото до 10 днів (в електронному вигляді через онлайн галерею)</li>
+            <li>Фото в стилі полароїд в подарунок (додаткове фото 100 грн)</li>
+          </ul>
+        </div>
+      </article> 
+
+      <article class="service">
+        <div class="service-heading">
+          <h3>Репортаж</h3>
+          <div class="price"> 1 500 грн</div>
+        </div>
+        <p class="service-description">
+          Щирі емоції, важливі деталі та моменти,
+          які швидко минають.
+        </p>
+        <button class="details-button" aria-expanded="false"
+          onclick="toggleDetails(this)">Деталі +</button>
+        <div class="details">
+          У зйомку входить:
+          <ul>
+            <li>1 година зйомки</li>
+            <li>100-120 фото в авторськійх обробці та легкій ретуші</li>
+                        <li>Допомога з позуванням, з вибором ідеї, образів і локації</li>
+            <li>Термін віддачі фото до 10 днів (в електронному вигляді через онлайн галерею)</li>
+            <li>Фото в стилі полароїд в подарунок (додаткове фото 100 грн)</li>
+          </ul>
+        </div>
+      </article> 
+
+      <article class="service">
+        <div class="service-heading">
+          <h3>Весільна історія</h3>
+          <div class="price">2 000 грн</div>
+        </div>
+        <p class="service-description">
+          Зйомка вашого особливого дня
+          Ранкові збори, церемонія, прогулянка та святкування
+          Живі емоції та важливі деталі
+          Формат зйомки — під ваш день
+        </p>
+        <button class="details-button" aria-expanded="false"
+          onclick="toggleDetails(this)">Деталі +</button>
+        <div class="details">
+          У зйомку входить:
+          <ul>
+            <li>1 година зйомки</li>
+            <li>Усі вдалі фото в авторській обробці та легкій ретуші</li>
+            <li>Термін віддачі фото до 14 днів (в електронному вигляді через онлайн галерею)</li>
+            <li>Фото в стилі полароїд в подарунок (додаткове фото 100 грн)</li>
+          </ul>
+        </div>
+      </article> 
+
+      <article class="service">
+        <div class="service-heading">
+          <h3>Шкільна зйомка</h3>
+          <div class="price">1500 грн</div>
+        </div>
+        <p class="service-description">
+          Портрети учнів, фото друзів і класу,
+          шкільні будні та особливі події.
+        </p>
+        <button class="details-button" aria-expanded="false"
+          onclick="toggleDetails(this)">Деталі +</button>
+        <div class="details">
+                У зйомку входить:
+          <ul>
+            <li>1 година зйомки</li>
+            <li>Усі вдалі фото в авторській обробці та легкій ретуші</li>
+            <li>Термін віддачі фото до 14 днів (в електронному вигляді через онлайн галерею)</li>
+          </ul>
+        </div>
+      </article> 
+
+    </div>
+  </div>
+</section>
+  
+<style>
+.conditions {
+  padding: 75px 5%;
+  background: var(--cream);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.conditions h2 {
+  text-align: center;
+  font: 400 clamp(38px, 5vw, 55px) 'Cormorant Garamond', serif;
+  color: var(--text);
+  margin: 0 0 30px;
+}
+
+.conditions details {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+
+.conditions summary {
+  color: var(--wine);
+  cursor: pointer;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.conditions-text {
+  padding-top: 20px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.conditions-text strong {
+  color: var(--text);
+}
+
+@media (max-width: 700px) {
+  .conditions {
+    padding: 50px 5%;
+  }
+}
+</style>
+
+<section class="conditions" id="conditions">
+
+  <h2>Умови зйомки</h2>
+
+  <details>
+
+    <summary>Ознайомитися з умовами +</summary>
+
+    <div class="conditions-text">
+
+      <p><strong>Бронювання та оплата</strong></p>
+
+      <p>Дата вважається заброньованою після внесення передоплати 500 грн. Решта суми оплачується після завершення зйомки.</p>
+
+      <p>У разі скасування зйомки передоплата не повертається.</p>
+
+      <p><strong>Перенесення та локація</strong></p>
+
+      <p>Перенесення зйомки можливе не більше двох разів.</p>
+
+      <p>Для локацій за межами міста транспортні витрати оплачуються окремо або ми їдемо вашим транспортом.</p>
+
+      <p>Час зйомки починається з першої локації. Дорога між локаціями входить у час роботи фотографа.</p>
+
+      <p><strong>Фото та конфіденційність</strong></p>
+
+      <p>Фотографії та відео можуть використовуватися в моєму портфоліо. Якщо бажаєте конфіденційну зйомку, повідомте про це до її початку — ваші кадри не публікуватимуться.</p>
+
+      <p>Ретуш легка: прибираю тимчасові недоліки шкіри та сторонні об'єкти на фоні. Фігуру не змінюю й нічого додатково не домальовую.</p>
+
+      <p>Вихідні RAW-файли не надаються.</p>
+
+    </div>
+
+  </details>
+
+</section>
+<script>
+function toggleDetails(button) {
+  const details = button.nextElementSibling;
+  const isOpen = details.classList.toggle('open');
+
+  button.textContent = isOpen ? 'Згорнути −' : 'Деталі +';
+  button.setAttribute('aria-expanded', isOpen);
+}
+</script>
+  
+<style>
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8%;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.about img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+}
+
+.about h2,
+.contact h2 {
+  font: 400 clamp(40px, 5vw, 60px)
+    'Cormorant Garamond', serif;
+  margin: 15px 0;
+}
+
+.about p,
+.contact p {
+  font-size: 13px;
+  line-height: 2;
+  color: var(--muted);
+}
+
+.script {
+  color: var(--wine);
+  font: 32px 'Parisienne', cursive;
+  margin-top: 22px;
+}
+
+.contact {
+  padding: 75px 0;
+  text-align: center;
+  background: var(--pink);
+}
+
+.contact p {
+  max-width: 470px;
+  margin: 0 auto 28px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 25px 0;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 55px 0;
+  }
+
+  .about img { height: 350px; }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="container">
+  <section class="about" id="about">
+    <img
+      src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=1000&q=85"
+      alt="Фотоапарат фотографа"
+    >
+
+    <div>
+      <div class="eyebrow">Трохи про мене</div>
+
+      <h2>Мені важливо,<br>щоб ви були собою</h2>
+
+      <p>
+        Я — Богдана, фотограф, яка любить справжні моменти й теплі історії.
+        
+        Знімаю людей такими, якими вони є — легко, природно та з душею.
+        
+        Для мене фотографія — це не просто кадр, а пам’ять, до якої хочеться повертатися.
+      </p>
+
+      <div class="script">До зустрічі у кадрі ♡</div>
+    </div>
+  </section>
+</div>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="eyebrow">Збережімо вашу історію</div>
+
+    <h2>Заплануємо зйомку?</h2>
+
+    <p>
+      Напиши мені, яку історію хочеш зберегти,
+      — разом підберемо ідею, локацію та зручну дату.
+    </p>
+
+    <a
+      class="button"
+      href="https://www.instagram.com/chukhray.ph?dlrf=MXIyMmJwMzZrc28zcg=="
+      target="_blank"
+      rel="noopener"
+    >
+      Написати в Instagram
+    </a>
+  </div>
+</section>
+
+<div class="container">
+  <footer>
+    <span>© Bohdana Chukhray · Photographer</span>
+    <span>Ваші миті. Справжні.</span>
+  </footer>
+</div>
+
 <style>
 /* CHUKHRAY — EDITORIAL WAVY FRAMES */
 
