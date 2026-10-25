@@ -90,43 +90,43 @@
       <div class="service-grid">
         <article class="service"><h3>Індивідуальна зйомка</h3><p>Це про тебе, твій настрій і красу справжніх моментів, у яких ти будеш собою.</p></article>
 
-
-<details class="shoot-details">
-  <summary>
-    <span class="details-closed">Додати +</span>
-    <span class="details-open">Згорнути −</span>
-  </summary>
-
-  <ul>
-    <li>Тривалість — 1 година</li>
-    <li>До 2 образів</li>
-    <li>Допомога у виборі локації, позуванні, образу та реквізиту</li>
-    <li>60–80 вдалих фото в моїй обробці та легкій ретуші</li>
-    <li>Термін видачі — до 10 днів</li>
-  </ul>
-</details>
-
-<style>
+/* Кнопки «Деталі» та «Згорнути» */
 .shoot-details {
-  margin-top: 15px;
-  border-top: 1px solid #e5ded8;
+  margin-top: 20px;
   padding-top: 14px;
-  color: #51483f;
-  font-size: 14px;
-  line-height: 1.8;
+  border-top: 1px solid #e5d9d0;
 }
 
 .shoot-details summary {
-  cursor: pointer;
   list-style: none;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: #f8f4ef;
+  border: 1px solid #dfcec4;
+  border-radius: 8px;
   color: #8e080d;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .shoot-details summary::-webkit-details-marker {
   display: none;
+}
+
+.shoot-details summary span span {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+.shoot-details summary:hover {
+  background: #8e080d;
+  border-color: #8e080d;
+  color: #ffffff;
 }
 
 .shoot-details .details-open {
@@ -141,15 +141,18 @@
   display: inline;
 }
 
-.shoot-details ul {
-  padding-left: 20px;
-  margin-top: 12px;
+/* Текст усередині */
+.shoot-details-text {
+  padding: 16px 5px 5px;
+  color: #51483f;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
-.shoot-details li {
-  margin-bottom: 7px;
+.shoot-details-text p {
+  margin: 0 0 9px;
 }
-</style>
+
         <article class="service"><h3>Love story</h3><p>Історія про вас двох, ваші почуття, ніжні обійми та погляди, у яких цілий всесвіт.</p></article>
         <article class="service"><h3>Сімейна зйомка</h3><p>Теплі обійми, щирі емоції та спогади про найрідніших.</p></article>
         <article class="service"><h3>Вагітність</h3><p>Ніжність, очікування та особлива любов, яка вже росте під серцем.</p></article>
