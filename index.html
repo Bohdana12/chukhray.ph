@@ -90,70 +90,64 @@
       <div class="service-grid">
         <article class="service"><h3>Індивідуальна зйомка</h3><p>Це про тебе, твій настрій і красу справжніх моментів, у яких ти будеш собою.</p></article>
 
+
 <details class="shoot-details">
-
   <summary>
-
     <span class="details-closed">Додати +</span>
-
     <span class="details-open">Згорнути −</span>
-
   </summary>
 
   <ul>
-
-    <li>1 година зйомки</li>
-
+    <li>Тривалість — 1 година</li>
     <li>До 2 образів</li>
-
-    <li>Допомога з вибором локації, образу та позуванням</li>
-
-    <li>60–80 фото в моїй обробці та легкій ретуші</li>
-
+    <li>Допомога у виборі локації, позуванні, образу та реквізиту</li>
+    <li>60–80 вдалих фото в моїй обробці та легкій ретуші</li>
     <li>Термін видачі — до 10 днів</li>
-
   </ul>
-
 </details>
+
 <style>
 .shoot-details {
-  margin-top: 18px;
-  border-top: 1px solid #ded8d1;
+  margin-top: 15px;
+  border-top: 1px solid #e5ded8;
   padding-top: 14px;
   color: #51483f;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.8;
 }
 
 .shoot-details summary {
+  cursor: pointer;
+  list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
-  list-style: none;
-  letter-spacing: 0.5px;
+  color: #8e080d;
 }
 
 .shoot-details summary::-webkit-details-marker {
   display: none;
 }
 
-.shoot-details summary span {
-  font-size: 22px;
+.shoot-details .details-open {
+  display: none;
 }
 
-.shoot-details[open] summary span {
-  transform: rotate(45deg);
+.shoot-details[open] .details-closed {
+  display: none;
+}
+
+.shoot-details[open] .details-open {
+  display: inline;
 }
 
 .shoot-details ul {
   padding-left: 20px;
-  margin-top: 14px;
+  margin-top: 12px;
 }
 
 .shoot-details li {
-  padding-left: 4px;
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 }
 </style>
         <article class="service"><h3>Love story</h3><p>Історія про вас двох, ваші почуття, ніжні обійми та погляди, у яких цілий всесвіт.</p></article>
