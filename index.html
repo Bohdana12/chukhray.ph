@@ -281,6 +281,180 @@ h2 {
 .details ul {
   padding-left: 20px;
 }
+  
+/* Мобільна версія */
+@media (max-width: 700px) {
+  html {
+    scroll-padding-top: 110px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 12px 18px;
+    padding: 14px 0;
+  }
+
+  nav a {
+    font-size: 10px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 35px 0 45px;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 12vw, 64px);
+  }
+
+  .hero-photos {
+    min-height: 380px;
+  }
+
+  .hero-main {
+    width: 82%;
+    height: 350px;
+  }
+
+  .hero-secondary {
+    width: 52%;
+    height: 205px;
+    border-width: 6px;
+  }
+
+  .signature {
+    margin-top: 0;
+    text-align: right;
+  }
+
+  .surname {
+    font-size: clamp(36px, 10vw, 52px);
+  }
+
+  .hero-cta {
+    margin-top: 10px;
+  }
+
+  .button {
+    padding: 14px 18px;
+    max-width: 100%;
+  }
+
+  .portfolio,
+  .services {
+    padding: 45px 0;
+  }
+
+  .intro {
+    display: block;
+    margin-bottom: 25px;
+  }
+
+  h2 {
+    font-size: clamp(34px, 9vw, 48px);
+    overflow-wrap: anywhere;
+  }
+
+  .intro p {
+    max-width: 100%;
+    margin-top: 12px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .gallery figure:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .gallery img {
+    aspect-ratio: 4 / 5;
+  }
+
+  .gallery figcaption {
+    font-size: 24px;
+  }
+
+  .service-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .service {
+    padding: 24px 18px;
+    min-width: 0;
+  }
+
+  .service h3 {
+    font-size: 25px;
+    overflow-wrap: anywhere;
+  }
+
+  .price {
+    font-size: 28px;
+  }
+
+  .conditions {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .conditions details {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .conditions summary {
+    font-size: 12px;
+    line-height: 1.7;
+    cursor: pointer;
+  }
+
+  .conditions p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .about {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-top: 40px;
+    padding-bottom: 45px;
+  }
+
+  .about img {
+    width: 100%;
+    max-height: 430px;
+    object-fit: cover;
+  }
+
+  .contact {
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  .contact h2 {
+    font-size: clamp(32px, 8vw, 46px);
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 11px;
+  }
 </style>
 </head>
 
